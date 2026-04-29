@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Signing an Experiment",
+    "node_id": "0000",
+    "page_index": 1,
+    "summary": "This document outlines the process of signing an experiment, which is a prerequisite for co-signing. The signing requirements are determined by project configuration. Once an author signs an experiment, they retain the ability to revoke the submission or change the co-signer until it is co-signed. Detailed steps are provided for signing, revoking, and changing co-signers, including navigation within the system, password entry, and optional comments. The process generates a PDF document and notifies co-signers if required. It also clarifies that co-editors and contributors cannot be selected as co-signers and provides links to related documentation. Legal notices and copyright information are also included."
+  }
+]

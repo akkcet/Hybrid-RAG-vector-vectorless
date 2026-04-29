@@ -1,0 +1,76 @@
+[
+  {
+    "title": "ELN New User Exercise",
+    "node_id": "0000",
+    "page_index": 1,
+    "prefix_summary": "# ELN New User Exercise\n\nAs part of the training for an ELN New User you should carry out this exercise to produce an Experiment and then Submit it and get your Super User to be your Witness. This will ensure that you have the knowledge to be able to use the ELN for recording your Scientific Work.\n",
+    "nodes": [
+      {
+        "title": "Prerequisites",
+        "node_id": "0001",
+        "page_index": 1,
+        "summary": "## Prerequisites\n\nYou need to have an ELN account – please speak to your Super User if you need help with this or if you have any other questions about this exercise.\n"
+      },
+      {
+        "title": "Files",
+        "node_id": "0002",
+        "page_index": 1,
+        "summary": "## Files\n\nDownload the zip file containing the files needed for this exercise and save it on your computer. Unzip it and you should find 3 files:\n\n- Brookfield viscometer.jpg\n- Viscosity of honey.xlsx\n- Large Word Document.docx\n\nYou can find them and a copy of this Exercise on the ELN SharePoint site under\n\nTraining Material/ ELN New User Exercise\n"
+      },
+      {
+        "title": "1. Log on and create experiment",
+        "node_id": "0003",
+        "page_index": 1,
+        "summary": "## 1. Log on and create experiment\n\nLog on to your ELN account and create a blank experiment and make a note of the experiment number – you will use this experiment to complete this exercise.\n"
+      },
+      {
+        "title": "2. Fill in mandatory fields with the following information",
+        "node_id": "0004",
+        "page_index": 1,
+        "summary": "## 2. Fill in mandatory fields with the following information\n\nTitle – ELN Essentials Exercise [your name] [date] – using your own name in the title in place of [your name] e.g. “ELN Essentials Teresa Loughbrough 3rd January 2020”\n\nProject – select the “Training project”\n\nSite – the site where you normally work e.g. “Colworth”\n\nCategory – the category you most usually work in e.g. “Ice Cream”\n\nExperiment type – select “Scientific Discussions”\n"
+      },
+      {
+        "title": "3. Add a Text section",
+        "node_id": "0005",
+        "page_index": 1,
+        "summary": "## 3. Add a Text section\n\nAdd a “Body Text” section above “Objectives” and change the name of the section to “Introduction” and add the following paragraph into the text section:\n\n“The aim of this experiment is to show that I understand how to use the basic functions of the ELN and how to add different sections to my experiment and how to sign off and get my\n\nexperiment witnessed. This is a Body Text Section and should only be used for Text if I need to add tables, equations or formulae use a Word section. You can use a mixture of Body Text and Images sections in an experiment if you have text and Images you need to make visible\"\n"
+      },
+      {
+        "title": "4. Add an image section",
+        "node_id": "0006",
+        "page_index": 2,
+        "summary": "## 4. Add an image section\n\nAdd an \"image\" section underneath \"Method\" and change the name of the section to \"Experimental setup\" and insert the file \"Brookfield viscometer.jpg\". Add an arrow pointing to the middle spindle and label it \"Spindle RV3\".\n"
+      },
+      {
+        "title": "5. Add a Word section",
+        "node_id": "0007",
+        "page_index": 2,
+        "summary": "## 5. Add a Word section\n\nAdd a \"Word\" section underneath the \"Introduction\" section and upload the Word document - Large Word Document.docx and make the first 5 pages visible\n"
+      },
+      {
+        "title": "6. Add an Excel section",
+        "node_id": "0008",
+        "page_index": 2,
+        "summary": "## 6. Add an Excel section\n\nAdd an \"Excel\" section underneath \"Materials\" and change the name of the section to \"Results\" and insert the file \"Viscosity of honey.xlsx\". Make visible in your ELN experiment all of the data in columns A (sample) to I (spindle).\n"
+      },
+      {
+        "title": "7. Search and copy a section",
+        "node_id": "0009",
+        "page_index": 2,
+        "summary": "## 7. Search and copy a section\n\nSearch and locate the experiment EXP-14-AA2311 \"Standard method for Viscosity measurement for mayonnaise &amp; dressings\" by Teresa Loughbrough.\n\nYou have the Advanced Search option where you can specify the experiment number field.\n\nCopy the \"Method\" section and put it into your experiment underneath the \"Objectives\". Copy the \"Equipment &amp; Materials\" section and put it beneath the \"Method\" section. Delete the empty \"Method\", \"Materials\" and \"Objectives\" sections from your experiment.\n"
+      },
+      {
+        "title": "8. Add underpinning data",
+        "node_id": "0010",
+        "page_index": 2,
+        "summary": "## 8. Add underpinning data\n\nUse the Underpinning Data assistant and the \"Basic Upload\" and upload 3 files:\n\n- Viscosity of honey.xlsx\n- Brookfield viscometer.jpg\n- Large Word Document.docx\n"
+      },
+      {
+        "title": "9. Submission and Witness",
+        "node_id": "0011",
+        "page_index": 2,
+        "summary": "## 9. Submission and Witness\n\nCheck that you have filled in all the sections on your experiment and CORRECTLY assigned the project and check the data is correct. Then Submit and choose either Teresa Loughbrough or Gerard Volante to be your witness. We will check your experiment and then reject it so it can be used again.\n\nUpdated 5th May 2022\n"
+      }
+    ]
+  }
+]

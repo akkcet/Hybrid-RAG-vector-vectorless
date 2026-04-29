@@ -1,0 +1,10 @@
+streamlit
+langchain
+langchain-openai
+langchain-community
+faiss-cpu
+PyPDF2
+pageindex
+python-dotenv
+openai
+aiofiles

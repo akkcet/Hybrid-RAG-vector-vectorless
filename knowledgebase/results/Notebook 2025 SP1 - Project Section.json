@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Project Section",
+    "node_id": "0000",
+    "page_index": 1,
+    "summary": "# Project Section\n\nThis section is a mandatory look-up section in the master template. You can add additional Project sections to an experiment or template if required.\n"
+  },
+  {
+    "title": "To add a project link:",
+    "node_id": "0001",
+    "page_index": 1,
+    "summary": "# To add a project link:\n\n1. Add a Project section to the experiment.\n2. Click in the text field.\n3. Do one of the following:\n- Choose from the list of projects displayed.\n- Type in the first few letters of the project name and then select the project or press Enter if this only lists a single project.\n\n**Note:** You can filter the list of projects:\n- Click Recent to display your most recently used projects.\n- Click All to display all available projects.\n"
+  },
+  {
+    "title": "To delete a project:",
+    "node_id": "0002",
+    "page_index": 1,
+    "summary": "# To delete a project:\n\n- For the project value that you want to delete, click X.\n\n**Note:** You can view the history of this section type.\n"
+  },
+  {
+    "title": "Project Configuration",
+    "node_id": "0003",
+    "page_index": 1,
+    "summary": "# Project Configuration\n\nThe selected projects control certain other aspects of the experiment, depending on how your administrator has configured Notebook projects.\n\n- Each project is visible only to users in certain groups.\n\nEnsure that you choose the correct projects so that all users who need to access the experiment are able to view it. You also need to consider whether selecting certain combinations of projects may expose the experiment to users who should not have access. In general, your administrator configure projects and group visibility so that such issues do not arise.\n\n- Each project has signing requirements.\n\nWhether an experiment can be directly submitted, requires author signing, or requires additional co-signing depends on its projects' configurations. The highest level of signing required by any project for an experiment determines the signing workflow.\n"
+  }
+]

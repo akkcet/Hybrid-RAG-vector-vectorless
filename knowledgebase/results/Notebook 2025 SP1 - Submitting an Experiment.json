@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Submitting an Experiment",
+    "node_id": "0000",
+    "page_index": 1,
+    "summary": "This document outlines the process for submitting experiment sections, detailing the prerequisites such as completing mandatory sections and locking contributor-added sections. It explains that users can submit either the entire experiment or a consecutive subset of sections. The submission process involves navigating to the submission page, verifying and selecting sections (which must be done sequentially and are highlighted in yellow), and proceeding to sign if necessary. All fields marked in yellow must be filled to avoid errors. Once submitted, sections are locked from editing, and new sections can be added later. The status of submitted sections is visually indicated by a padlock icon in the Notebook Editor."
+  }
+]

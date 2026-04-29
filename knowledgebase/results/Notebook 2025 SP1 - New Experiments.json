@@ -1,0 +1,20 @@
+[
+  {
+    "title": "New Experiments",
+    "node_id": "0000",
+    "page_index": 1,
+    "summary": "# New Experiments\n\nYou can create either a new template or a new experiment, based on a template or as an empty Experiment with no sections.\n"
+  },
+  {
+    "title": "To start a new experiment:",
+    "node_id": "0001",
+    "page_index": 1,
+    "summary": "# To start a new experiment:\n\n1. Either:\n- From Home, click the Start New Experiment button.\n- Click the Cogwheel and select New.\n\n2. Then either:\n- Select Template from the second pane to create a new template.\n- Select Experiment from the second pane to begin a new experiment, either:\n- Select the template to use and click Create From Template.\n\n&gt; Tip: Select either Personal Templates or Public Templates to display the corresponding list of templates available.\n- Click Blank New Experiment to create a new Experiment that contains only the required fields.\n\n3. Add information and sections to the experiment as required.\n\nIf a Template is shared, the same collaborators and sharing settings are saved in the new experiment.\n\n&gt; Note: You can also create a new experiment from a Template information page, by clicking the Create Experiment button.\n"
+  },
+  {
+    "title": "Experiment Features",
+    "node_id": "0002",
+    "page_index": 1,
+    "summary": "# Experiment Features\n\nWhen the new experiment is created it is assigned a number, see Experiment Numbering for more information. The Experiment will be automatically saved on a regular basis.\n\nIf you close the experiment you can open it again later and continue to add information and sections as required. You can find all your recent Experiments:\n\n- On the Home page.\n- In your My Notebook libraries.\n- In the Recent Experiments list accessed from the Cogwheel.\n\nAn experiment can be shared so that multiple users can collaborate to add and edit some or all of its contents.\n\nTo review the history of an experiment and view other related Experiments, select Info from the Cogwheel.\n\nOnce an experiment is created a PDF version can be generated at any time and it can be saved as a clone or a template.\n"
+  }
+]

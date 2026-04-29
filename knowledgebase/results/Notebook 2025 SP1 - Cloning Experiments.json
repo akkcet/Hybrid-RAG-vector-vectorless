@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Cloning Experiments",
+    "node_id": "0000",
+    "page_index": 1,
+    "summary": "# Cloning Experiments\n\nTo clone an experiment:\n1. From an Experiment, click the Cogwheel.\n2. Click Save as.\n3. From the second panel select Experiment.\n4. Click Clone Experiment.\n\nIf you are the owner of the existing experiment and it is shared, the same collaborators are saved in the new Experiment. The sharing settings are not saved in the new Experiment.\n\nA new experiment is created with the same sections, but a new Experiment Number.\n\nSee Also\n- New Experiments\n- Experiment Numbering\n- Continuing an Existing Experiment\n- Saving Experiments\n- Templates\n\nLegal Notices\n\nBIOVIA Notebook 2025 SP1 Help: Tuesday, July 22, 2025\n\nhttps://notebook.unilever.com/notebook-help/NotebookWebHelp.htm#webclient/experiment/clone_experiment_cloud.htm?Highlight=experiment\n"
+  }
+]
