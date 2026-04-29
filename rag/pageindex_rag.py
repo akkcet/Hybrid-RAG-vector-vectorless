@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-llm = ChatOpenAI(temperature=0, api_key=os.getenv("AZURE_OPENAI_API_KEY"))
+#llm = ChatOpenAI(temperature=0, api_key=os.getenv("AZURE_OPENAI_API_KEY"))
 PAGEINDEX_META_FILE = "knowledgebase/results/pageindex_docs.json"
 def build_pageindex(pages):
     """
