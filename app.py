@@ -6,6 +6,8 @@ import os
 os.environ["SSL_CERT_FILE"] = certifi.where()
 os.environ["REQUESTS_CA_BUNDLE"] = certifi.where()
 
+from rag.chitchat import chitchat_answer,is_chitchat, classify_intent
+
 # ----- Standard Imports -----
 import streamlit as st
 from dotenv import load_dotenv
@@ -56,9 +58,20 @@ except Exception as e:
 question = st.chat_input("Ask a question about the indexed documents")
 
 if question:
-    with st.spinner("Thinking..."):
-        try:
-            # Vector RAG
+    
+    try:
+        intent = classify_intent(question)
+        # ✅ Chit‑chat path
+        if intent == "CHITCHAT":
+            with st.spinner("Thinking..."):
+                answer = chitchat_answer(question)
+            st.chat_message("user").markdown(question)
+            st.chat_message("assistant").write(answer)
+            st.caption("💬 Chit‑chat mode")
+            st.stop()
+
+        # Vector RAG
+        with st.spinner("Thinking..."):
             vector_answer = vector_rag_answer(
                 question=question,
                 index=index,
@@ -79,10 +92,10 @@ if question:
                 vector_answer,
                 pageindex_answer,
             )
-            st.chat_message("user").markdown(question)
-            st.chat_message("assistant").write(final_answer)
-            st.caption(f"🧠 Retrieval mode used: **{mode}**")
+        st.chat_message("user").markdown(question)
+        st.chat_message("assistant").write(final_answer)
+        st.caption(f"🧠 Retrieval mode used: **{mode}**")
 
-        except Exception as e:
-            st.error("❌ Error while answering")
-            st.exception(e)
+    except Exception as e:
+        st.error("❌ Error while answering")
+        st.exception(e)
