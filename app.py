@@ -79,7 +79,7 @@ if question:
                 vector_answer,
                 pageindex_answer,
             )
-
+            st.chat_message("user").markdown(question)
             st.chat_message("assistant").write(final_answer)
             st.caption(f"🧠 Retrieval mode used: **{mode}**")
 
