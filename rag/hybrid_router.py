@@ -21,15 +21,20 @@ def hybrid_select(question, vector_ans, pageindex_ans):
     {pageindex_ans}
 
     Which answer is more accurate and grounded?
-    Return A or B with a brief reason.
+    Respond with exactly one character: A or B.
     """
 
     decision =  llm.chat.completions.create(
         model="gpt4o",
         messages=[{"role": "user", "content": judge_prompt}]
     )
-    decision = decision.choices[0].message.content.strip()
-    if "A" in decision:
-        return decision, "VECTOR_RAG"
+    decision = decision.choices[0].message.content.strip().upper()
+    
+    if decision == "A":
+        return vector_ans, "VECTOR_RAG"
+    elif decision == "B":
+        return pageindex_ans, "PAGEINDEX_RAG"
     else:
-        return decision, "PAGEINDEX_RAG"
+        #  Safe fallback
+        return vector_ans, "VECTOR_RAG"
+
