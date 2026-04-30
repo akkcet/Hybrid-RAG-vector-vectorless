@@ -160,7 +160,7 @@ Answer:"""
     
     response = client.chat.completions.create(
         model="gpt4o",
-        messages=[{"role": "user", "content": prompt}]
+        messages=[{"role": "user", "content": prompt}],
         temperature=0.2
     )
     answer_text = response.choices[0].message.content.strip()
