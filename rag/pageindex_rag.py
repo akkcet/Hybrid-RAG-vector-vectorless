@@ -64,7 +64,7 @@ def compress(nodes,doc_id):
                 "node_id": n["node_id"],
                 "title":   n["title"],
                 "page":    n.get("page_index", "?"),
-                "summary": n.get("text", "")[:150]  # first 150 chars
+                "summary": n.get("text", "")
             }
             if n.get("nodes"):
                 entry["children"] = compress(n["nodes"],doc_id)
