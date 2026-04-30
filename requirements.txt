@@ -8,3 +8,4 @@ pageindex
 python-dotenv
 openai
 aiofiles
+langsmith
