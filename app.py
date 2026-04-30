@@ -42,7 +42,11 @@ st.set_page_config(
 
 st.title("🤖 Hybrid RAG Chat (FAISS + PageIndex)")
 st.caption("Vector RAG + Reasoning-based PageIndex RAG")
-
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
+#show History
+for message in st.session_state.chat_history:
+    st.chat_message(message["role"]).write(message["content"])
 # ----- Load Indexes ONCE -----
 @st.cache_resource
 def load_resources():
@@ -66,13 +70,16 @@ except Exception as e:
 question = st.chat_input("Ask a question about the indexed documents")
 
 if question:
-    
+    st.session_state.chat_history.append({"role": "user", "content": question})  
     try:
         intent = classify_intent(question)
         # ✅ Chit‑chat path
         if intent == "CHITCHAT":
             with st.spinner("Thinking..."):
                 answer = chitchat_answer(question)
+            st.session_state.chat_history.append(
+                {"role": "assistant", "content": answer}
+            )
             traced_chitchat(question, answer)
             st.chat_message("user").markdown(question)
             st.chat_message("assistant").write(answer)
@@ -104,6 +111,9 @@ if question:
                 pageindex_answer,
             )
             traced_hybrid_decision(question, mode)
+        st.session_state.chat_history.append(
+                {"role": "assistant", "content": final_answer}
+            )
         st.chat_message("user").markdown(question)
         st.chat_message("assistant").write(final_answer)
         st.caption(f"🧠 Retrieval mode used: **{mode}**")
