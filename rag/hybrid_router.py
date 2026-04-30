@@ -32,4 +32,4 @@ def hybrid_select(question, vector_ans, pageindex_ans):
     if "A" in decision:
         return vector_ans, "VECTOR_RAG"
     else:
-        return decision.choices[0].message.content.strip(), "PAGEINDEX_RAG"
+        return pageindex_ans, "PAGEINDEX_RAG"
