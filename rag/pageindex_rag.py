@@ -116,6 +116,19 @@ def find_nodes_by_doc_ids(tree: list, target_ids: list) -> list:
         if node.get("nodes"):
             found.extend(find_nodes_by_ids(node["nodes"], target_ids))
     return found  
+def build_citations(nodes):
+    seen = set()
+    citations = []
+
+    for node in nodes:
+        key = (node.get("title"), node.get("page"))
+        if key not in seen:
+            seen.add(key)
+            citations.append(
+                f"- {node.get('title')} (Page {node.get('page', '?')})"
+            )
+
+    return citations
 def generate_answer(query: str, nodes: list, model: str = "gpt-4o") -> str:
     """
     Takes retrieved nodes as context and generates a grounded answer.
@@ -129,14 +142,13 @@ def generate_answer(query: str, nodes: list, model: str = "gpt-4o") -> str:
     context_parts = []
     for node in nodes:
         context_parts.append(
-            f"[Section: '{node['title']}' | Page {node.get('page', '?')}]\n"
-            f"{node.get('summary', 'Content not available.')}"
+            node.get("summary", "Content not available.")
         )
-    context = "\n\n---\n\n".join(context_parts)
+    context = "\n\n".join(context_parts)
     
     prompt = f"""You are an expert document analyst.
 Answer the question using ONLY the provided context.
-For every claim you make, cite the section title and page number in parentheses.
+Do NOT mention section names or page numbers in the answer itself.
 Be concise and precise.
 
 Question: {query}
@@ -149,9 +161,15 @@ Answer:"""
     response = client.chat.completions.create(
         model="gpt4o",
         messages=[{"role": "user", "content": prompt}]
+        temperature=0.2
     )
+    answer_text = response.choices[0].message.content.strip()
+    citations = build_citations(nodes)
     
-    return response.choices[0].message.content
+    if citations:
+            answer_text += "\n\n**Sources:**\n" + "\n".join(citations)
+
+    return answer_text
 
 def pageindex_rag_answer(question, pi_client, docs):
     compressed_tree = []
