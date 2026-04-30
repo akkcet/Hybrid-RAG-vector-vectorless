@@ -5,7 +5,7 @@ import os
 
 os.environ["SSL_CERT_FILE"] = certifi.where()
 os.environ["REQUESTS_CA_BUNDLE"] = certifi.where()
-
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
 from rag.chitchat import chitchat_answer,is_chitchat, classify_intent
 
 # ----- Standard Imports -----
@@ -21,6 +21,14 @@ from rag.pageindex_rag import (
     load_pageindex,
     pageindex_rag_answer,
 )
+
+from rag.tracing import (
+    traced_chitchat,
+    traced_vector_rag,
+    traced_pageindex_rag,
+    traced_hybrid_decision,
+)
+
 from rag.hybrid_router import hybrid_select
 
 # ----- Env -----
@@ -65,6 +73,7 @@ if question:
         if intent == "CHITCHAT":
             with st.spinner("Thinking..."):
                 answer = chitchat_answer(question)
+            traced_chitchat(question, answer)
             st.chat_message("user").markdown(question)
             st.chat_message("assistant").write(answer)
             st.caption("💬 Chit‑chat mode")
@@ -78,6 +87,7 @@ if question:
                 texts=texts,
                 emb=emb,
             )
+            traced_vector_rag(question, vector_answer)
 
             # PageIndex RAG
             pageindex_answer = pageindex_rag_answer(
@@ -85,6 +95,7 @@ if question:
                 pi_client=pi_client,
                 docs=pi_docs,
             )
+            traced_pageindex_rag(question, pageindex_answer)
 
             # Hybrid routing
             final_answer, mode = hybrid_select(
@@ -92,6 +103,7 @@ if question:
                 vector_answer,
                 pageindex_answer,
             )
+            traced_hybrid_decision(question, mode)
         st.chat_message("user").markdown(question)
         st.chat_message("assistant").write(final_answer)
         st.caption(f"🧠 Retrieval mode used: **{mode}**")
