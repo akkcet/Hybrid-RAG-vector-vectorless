@@ -79,6 +79,33 @@ def find_nodes_by_ids(tree: list, target_ids: list) -> list:
         if node.get("nodes"):
             found.extend(find_nodes_by_ids(node["nodes"], target_ids))
     return found
+
+def find_nodes_by_doc_ids_ug(compressed_tree, doc_id, node_id=None):
+    """
+    Find nodes matching doc_id (and optionally node_id) from compressed_tree.
+
+    :param compressed_tree: list of lists containing node dicts
+    :param doc_id: document id to search for
+    :param node_id: optional node_id to narrow the search
+    :return: list of matching node dictionaries
+    """
+    matches = []
+
+    def traverse(nodes):
+        for node in nodes:
+            if node.get("doc_id") == doc_id:
+                if node_id is None or node.get("node_id") == node_id:
+                    matches.append(node)
+
+            # recurse into children if present
+            if "children" in node and isinstance(node["children"], list):
+                traverse(node["children"])
+
+    for group in compressed_tree:
+        traverse(group)
+
+    return matches
+
 def find_nodes_by_doc_ids(tree: list, target_ids: list) -> list:
     """Recursively walk the tree and collect nodes matching target_ids."""
     found = []
@@ -98,6 +125,7 @@ def generate_answer(query: str, nodes: list, model: str = "gpt-4o") -> str:
         return "⚠️ No relevant sections found in the document."
     
     # Build context string from retrieved nodes
+    flat_nodes = [n for sublist in nodes for n in sublist]
     context_parts = []
     for node in nodes:
         context_parts.append(
@@ -175,9 +203,10 @@ def pageindex_rag_answer(question, pi_client, docs):
     #print("node_ids: ",node_ids)
     docs_get = [item.split(":") for item in node_ids]
     #print("docs_get: ",docs_get)
+    node = []
     for i,k in docs_get:
       
-      node = find_nodes_by_doc_ids(compressed_tree, i)
+      node.extend(find_nodes_by_doc_ids_ug(compressed_tree, i,k))
       #print("node:  ",node)
     #tree_result  = pi_client.get_tree(doc_id, node_summary=True)
     # Step 2: Retrieve nodes
