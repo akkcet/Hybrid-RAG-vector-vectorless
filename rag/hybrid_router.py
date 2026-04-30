@@ -28,7 +28,7 @@ def hybrid_select(question, vector_ans, pageindex_ans):
         model="gpt4o",
         messages=[{"role": "user", "content": judge_prompt}]
     )
-
+    decision = decision.choices[0].message.content.strip()
     if "A" in decision:
         return vector_ans, "VECTOR_RAG"
     else:
